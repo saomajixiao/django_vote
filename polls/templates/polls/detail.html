@@ -7,7 +7,6 @@
     <title>ZTQVOTE</title>
 </head>
 
-{% load static %}
 
 <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
 
@@ -21,5 +20,7 @@
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}
-<input type="submit" value="Vote" />
+<input type="submit" value="投票" />
 </form>
+
+<a href="{% url 'polls:index' %}">返回首页</a>
